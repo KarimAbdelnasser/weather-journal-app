@@ -17,7 +17,7 @@ app.use(express.static("website"));
 app.use(cors());
 
 // Setup empty JS object to act as endpoint for all routes
-let projectData = [];
+let projectData = {};
 
 function addData(req, res) {
   let newData = {
@@ -25,7 +25,7 @@ function addData(req, res) {
     temperature: req.body.weather,
     feelings: req.body.feelings
   };
-  projectData.push(newData);
+  projectData = newData;
   res.send(projectData)
 }
 
