@@ -50,13 +50,11 @@ function performAction(e) {
 /* Function to GET Project Data */
  const getData = async()=>{
   const response = await fetch(`http://localhost:3000/get`);
-  console.log(response)
   try{
     const data = await response.json();
     document.getElementById('date').innerHTML = `Date: ${data.date}`;
     document.getElementById('temp').innerHTML = `Temperature: ${data.temperature} &#176c`;
     document.getElementById('content').innerHTML = `Weather Feels Like: ${data.feelings}`;
-    console.log(data)
     return data;
   }catch(error){
     console.log('error',error);
